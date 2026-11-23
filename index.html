@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09090b">
+  <meta name="color-scheme" content="dark">
+
+  <title>PawLoad — Lightweight Mobile API Client</title>
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PawLoad">
+<meta property="og:title" content="PawLoad — API Testing in Your Pocket">
+<meta property="og:description" content="A lightweight Android API client. Send HTTP requests, manage JSON payloads, and organize your API collections directly from your phone.">
+<meta property="og:url" content="https://pawload.vercel.app">
+<meta property="og:image" content="https://i.ibb.co.com/MDqXQDwN/20261123-160910.jpg">
+<meta property="og:image:secure_url" content="https://i.ibb.co.com/MDqXQDwN/20261123-160910.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="PawLoad — Lightweight Mobile API Client">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PawLoad — API Testing in Your Pocket">
+<meta name="twitter:description" content="Test APIs directly from your Android device with PawLoad, a lightweight mobile API client.">
+<meta name="twitter:image" content="https://i.ibb.co.com/MDqXQDwN/20261123-160910.jpg">
+<meta name="twitter:image:alt" content="PawLoad Mobile API Client">.
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    html, body {
+      margin: 0;
+      background: #09090b;
+      color: #fafafa;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .modal-backdrop {
+      background: rgba(0, 0, 0, .75);
+      backdrop-filter: blur(5px);
+    }
+
+    .modal-backdrop.hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body class="bg-zinc-950 text-zinc-50 antialiased">
+
+  <div class="min-h-screen lg:h-screen lg:overflow-hidden flex flex-col justify-between px-4 sm:px-6 lg:px-10 py-5 max-w-6xl mx-auto">
+
+    <header class="flex items-center justify-between border-b border-zinc-800 pb-4">
+      <div class="flex items-center gap-2.5">
+        <img src="icon.jpg" alt="PawLoad" class="w-8 h-8 rounded-lg object-cover">
+
+        <div class="flex items-center gap-2">
+          <span class="font-semibold text-sm sm:text-base tracking-tight">PawLoad</span>
+          <span class="text-[11px] font-mono px-2 py-0.5 rounded-full border border-zinc-800 bg-zinc-900 text-zinc-400">
+            v1.0.0
+          </span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2 text-xs text-zinc-500 font-mono">
+        <span class="w-1.5 h-1.5 rounded-full bg-zinc-300"></span>
+        Android APK
+      </div>
+    </header>
+
+    <main class="my-auto py-6 lg:py-0 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+
+      <section class="lg:col-span-7 space-y-5">
+
+        <div class="inline-flex items-center gap-2 rounded-md border border-zinc-800 bg-zinc-900/60 px-3 py-1 text-xs text-zinc-400">
+          <span class="font-mono text-zinc-200">HTTP / JSON</span>
+          <span>•</span>
+          Mobile API Client
+        </div>
+
+        <div class="space-y-3">
+          <h1 class="text-4xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+            Test APIs From Your Pocket.
+          </h1>
+
+          <p class="text-xs sm:text-base text-zinc-400 max-w-xl leading-relaxed">
+            <strong class="text-zinc-200 font-medium">PawLoad</strong>
+            is a lightweight API client for Android. Send GET, POST, PUT,
+            and DELETE requests, configure headers and JSON bodies,
+            and organize your API requests into collections.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+
+          <div class="rounded-lg border border-zinc-800 bg-zinc-900/30 p-3">
+            <p class="text-xs font-medium">Requests &amp; Parameters</p>
+            <p class="text-[11px] text-zinc-500 mt-1">
+              URLs, Headers, Authentication &amp; Request Bodies.
+            </p>
+          </div>
+
+          <div class="rounded-lg border border-zinc-800 bg-zinc-900/30 p-3">
+            <p class="text-xs font-medium">JSON Formatting</p>
+            <p class="text-[11px] text-zinc-500 mt-1">
+              Format and read JSON payloads and responses with ease.
+            </p>
+          </div>
+
+          <div class="rounded-lg border border-zinc-800 bg-zinc-900/30 p-3">
+            <p class="text-xs font-medium">Collections</p>
+            <p class="text-[11px] text-zinc-500 mt-1">
+              Organize, import, and export your API request collections.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3 pt-1">
+
+          <a
+            href="https://github.com/frmnxhken/Pawload/releases/download/Apk/pawload_V1.0.0.apk"
+            download="PawLoad-v1.0.0.apk"
+            onclick="showInstallInfo()"
+            class="inline-flex items-center justify-center gap-2.5 rounded-md bg-zinc-50 text-zinc-950 hover:bg-zinc-200 active:scale-[0.99] transition px-5 py-3 text-sm font-medium shadow-sm"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download PawLoad (3.7 MB)
+          </a>
+
+          <span class="text-xs font-mono text-zinc-500">
+            Free • Lightweight • Ad-free
+          </span>
+
+        </div>
+
+      </section>
+
+      <aside class="lg:col-span-5 flex flex-col items-center gap-4">
+
+        <div class="flex items-center justify-between w-full max-w-[280px]">
+          <span class="text-xs font-medium text-zinc-400">App Preview</span>
+          <span class="text-[10px] font-mono text-zinc-500 border border-zinc-800 rounded px-2 py-1">
+            Simple UI
+          </span>
+        </div>
+
+        <div class="w-[240px] max-w-full rounded-[1.5rem] border-[5px] border-zinc-800 bg-zinc-950 shadow-2xl overflow-hidden">
+          <img
+            src="ui.jpg"
+            alt="PawLoad application interface preview"
+            class="block w-full h-auto"
+          >
+        </div>
+
+        <p class="text-[11px] text-zinc-500 font-mono">
+          Try it on your phone
+        </p>
+
+      </aside>
+
+    </main>
+
+    <footer class="border-t border-zinc-800 pt-4 flex items-center justify-between text-xs text-zinc-500">
+      <span>Made with ♥ by PawLoad</span>
+      <span class="font-mono">Mobile API Client · 2026</span>
+    </footer>
+
+  </div>
+
+  <div
+    id="installModal"
+    class="modal-backdrop hidden fixed inset-0 z-50 items-center justify-center p-4"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+  >
+
+    <div class="w-full max-w-sm rounded-xl border border-zinc-800 bg-zinc-950 p-5 shadow-2xl">
+
+      <div class="w-11 h-11 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-zinc-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 9v4"/>
+          <path d="M12 17h.01"/>
+          <path d="M10.3 3.9 2.7 17a2 2 0 0 0 1.7 3h15.2a2 2 0 0 0 1.7-3l-7.6-13.1a2 2 0 0 0-3.4 0Z"/>
+        </svg>
+      </div>
+
+      <h2 id="modalTitle" class="text-lg font-semibold tracking-tight">
+        Installation Information
+      </h2>
+
+      <p class="text-sm text-zinc-400 leading-relaxed mt-2">
+        PawLoad is distributed directly as an APK file,
+        outside the Google Play Store.
+      </p>
+
+      <div class="mt-4 rounded-lg border border-zinc-800 bg-zinc-900/60 p-3.5">
+        <p class="text-sm font-medium text-zinc-200 mb-2">
+          Allow Installation from This Source
+        </p>
+
+        <p class="text-xs text-zinc-400 leading-relaxed">
+          When opening the APK file, Android may ask you to allow
+          installation from this source
+          (<strong class="text-zinc-200 font-medium">Install unknown apps</strong>).
+        </p>
+
+        <p class="text-xs text-zinc-400 leading-relaxed mt-2">
+          If prompted, enable permission for your browser or file manager,
+          return to the APK, and continue the installation.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-2 mt-5">
+        <button
+          onclick="closeInstallInfo()"
+          class="flex-1 rounded-md border border-zinc-800 bg-zinc-900 hover:bg-zinc-800 text-zinc-200 text-sm font-medium py-2.5 transition"
+        >
+          Got it
+        </button>
+      </div>
+
+      <p class="text-[10px] text-zinc-500 text-center mt-3">
+        Only install APK files from the official PawLoad source.
+      </p>
+
+    </div>
+
+  </div>
+
+  <script>
+    const modal = document.getElementById('installModal');
+
+    function showInstallInfo() {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeInstallInfo() {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    modal.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        closeInstallInfo();
+      }
+    });
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeInstallInfo();
+      }
+    });
+  </script>
+
+</body>
+</html>
